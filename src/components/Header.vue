@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <h1>Header</h1>
+    <h3>Header</h3>
   </div>
 </template>
 
