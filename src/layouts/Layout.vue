@@ -28,7 +28,6 @@ const fns = {
 
 <template>
   <div>
-    <h2>Layout</h2>
     <Header></Header>
 
     <router-view v-slot="{ Component }">

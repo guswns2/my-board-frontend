@@ -2,14 +2,15 @@
 </script>
 
 <template>
-  <div>
-    <h1>App</h1>
-    <router-view v-slot="{ Component }">
-      <transition>
-        <component :is="Component" />
-      </transition>
-    </router-view>
-  </div>
+  <v-app>
+    <v-main>
+      <router-view v-slot="{ Component }">
+        <transition>
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </v-main>
+  </v-app>
 </template>
 
 <style scoped>
