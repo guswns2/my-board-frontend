@@ -2,14 +2,12 @@
 </script>
 
 <template>
-  <v-app style="background-color: #ffffff">
-    <v-main>
-      <router-view v-slot="{ Component }">
-        <transition>
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </v-main>
+  <v-app style="background-color: #ffffff;">
+    <router-view v-slot="{ Component }">
+      <transition>
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </v-app>
 </template>
 

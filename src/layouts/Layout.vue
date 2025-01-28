@@ -5,10 +5,10 @@ import {NavigationFailure} from "vue-router";
 import {onMounted} from "vue";
 
 onMounted(() => {
-  fns.setRoute("home");
+  func.setRoute("home");
 })
 
-const fns = {
+const func = {
   setRoute(name: string) {
     console.log("############################ Route Name ############################");
     console.log(`ROUTER NAME : ${name}`);
@@ -20,14 +20,14 @@ const fns = {
       console.log("############################Route Error Catch############################");
       console.log(error);
       console.log("############################BoardList 으로 이동############################");
-      fns.setRoute("layout");
+      func.setRoute("layout");
     }
   }
 }
 </script>
 
 <template>
-  <div>
+  <div class="g-layout-container">
     <Header></Header>
 
     <router-view v-slot="{ Component }">
@@ -39,4 +39,10 @@ const fns = {
 </template>
 
 <style scoped>
+.g-layout-container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 64px);
+  padding-top: 64px;
+}
 </style>
