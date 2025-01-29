@@ -14,12 +14,12 @@ const func = {
     console.log(`ROUTER NAME : ${name}`);
 
     try {
-      router.push({ name: name, state: { state1: 100, state2: "test-2" }, replace: false });
+      router.push({ name: name });
     } catch (ex) {
       const error = ex as NavigationFailure;
       console.log("############################Route Error Catch############################");
       console.log(error);
-      console.log("############################BoardList 으로 이동############################");
+      console.log("############################Home 으로 이동############################");
       func.setRoute("layout");
     }
   }

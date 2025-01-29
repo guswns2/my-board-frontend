@@ -8,3 +8,25 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.g-view-container {
+  display: flex;
+  padding: 15px;
+  width: calc(100% - 30px) !important;
+  height: calc(100% - 30px) !important;
+}
+.g-view-main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.g-content-card {
+  display: flex !important;
+  flex-wrap: wrap;
+  flex: 1 1 auto !important;
+  padding: 15px !important;
+}
+
+.v-row {
+  margin: 0 !important;
+}
