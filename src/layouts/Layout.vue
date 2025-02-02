@@ -39,10 +39,4 @@ const func = {
 </template>
 
 <style scoped>
-.g-layout-container {
-  display: flex;
-  width: 100%;
-  height: calc(100% - 64px);
-  padding-top: 64px;
-}
 </style>

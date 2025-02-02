@@ -30,6 +30,7 @@ const data = {
           :headers="data.table.headers"
           :items="data.table.items"
           :search="data.table.searchWord"
+          hover
         >
           <template #top>
             <v-row class="search-row" style="width: 100%;">
