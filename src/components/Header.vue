@@ -28,7 +28,7 @@ const func = {
 
       <v-spacer></v-spacer>
 
-      <v-btn variant="plain" :ripple="false">Login</v-btn>
+      <v-btn variant="plain" :ripple="false" @click="func.setRoute('login')">Login</v-btn>
     </v-app-bar>
 </template>
 

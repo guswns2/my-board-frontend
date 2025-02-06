@@ -22,6 +22,11 @@ export const router = createRouter({
                     path: "/hashtag",
                     name: "hashtag",
                     component: () => import("../views/Hashtag.vue")
+                },
+                {
+                    path: "/login",
+                    name: "login",
+                    component: () => import("../views/Login.vue")
                 }
             ]
         }
