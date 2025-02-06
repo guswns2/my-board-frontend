@@ -27,24 +27,29 @@ body {
 .g-view-main {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 .g-content-card {
   display: flex !important;
   flex-wrap: wrap;
-  flex: 1 1 auto !important;
+  align-self: stretch;
   padding: 15px !important;
+  height: 100%;
+}
+.g-login-card {
+  margin: 10% 33%;
+  height: fit-content;
+}
+.g-login-btn {
+  width: 100%;
 }
 
 
 /* vuetify */
-.v-data-table__tr:hover {
-  cursor: pointer;
-}
-
 .v-row {
   margin: 0 !important;
-  flex: 0 0 auto !important;
 }
 .v-row > .v-col {
   padding-top: 0;
@@ -55,4 +60,44 @@ body {
 }
 .v-row > .v-col:nth-last-child(1) {
   padding-right: 0;
+}
+.v-row + .v-row {
+  margin-top: 10px !important;
+}
+.g-view-main > .v-row {
+  align-self: stretch;
+}
+
+.v-data-table {
+  align-self: stretch;
+}
+.v-data-table__tr:hover {
+  cursor: pointer;
+  background-color: #fafcff;
+}
+.v-data-table > .search-row {
+  flex: 0 0 auto !important;
+  align-items: center;
+  align-self: stretch;
+  width: 100%;
+  height: fit-content;
+}
+.v-data-table > .search-row > .v-col {
+  height: fit-content;
+}
+
+.v-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}
+.v-form > .form-row {
+  width: 100%;
+  height: fit-content;
+}
+.v-form > .form-row > .form-col {
+  height: fit-content;
 }
