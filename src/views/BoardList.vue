@@ -20,9 +20,13 @@ const data = {
 }
 
 const func = {
-  onRowClick (item: any) {
-    console.log("### onRowClick ###", item)
+  onClickRow(item: any) {
+    console.log("### onClickRow ###", item)
     utils.setRoute('boarddetail', {title: item.title})
+  },
+  onClickBoardWrite() {
+    console.log("### onClickBoardWrite ###")
+    utils.setRoute('boardwrite')
   }
 }
 </script>
@@ -33,58 +37,69 @@ const func = {
       <v-row>
         <v-col>
           <v-card class="g-content-card">
-            <v-data-table
-                :headers="data.table.headers"
-                :items="data.table.items"
-                :search="data.table.searchWord"
-                hover
-            >
-              <template #top>
-                <v-row class="search-row">
-                  <v-col cols="2">
-                    <v-autocomplete
-                        v-model="data.table.searchHeader"
-                        label="검색항목"
-                        variant="outlined"
-                        hide-details
-                        :items="data.table.headers"
-                        item-title="title"
-                        item-value="key"
-                    >
-                    </v-autocomplete>
-                  </v-col>
-                  <v-col cols="8">
-                    <v-text-field
-                        v-model="data.table.searchWord"
-                        label="검색어"
-                        variant="outlined"
-                        hide-details
-                        single-line
-                    >
-                    </v-text-field>
-                  </v-col>
-                  <v-col cols="2">
-                    <v-btn prepend-icon="mdi-magnify">조회</v-btn>
-                  </v-col>
-                </v-row>
-              </template>
-
-              <template v-slot:item="{ item }">
-                <tr
-                    @click="func.onRowClick(item)"
-                    :style="{ cursor: 'pointer' }"
+            <v-row>
+              <v-col cols="12">
+                <v-data-table
+                  :headers="data.table.headers"
+                  :items="data.table.items"
+                  :search="data.table.searchWord"
+                  hover
                 >
-                  <td v-for="header in data.table.headers" style="text-align: center">
-                    <template v-if="header.key === 'hashtag'">
-                      <v-chip prepend-icon="mdi-pound"> {{ item[header.key] }} </v-chip>
-                    </template>
-                    <template v-else>
-                      {{ header.key ? item[header.key] : "" }}
-                    </template>
-                  </td>
-                </tr>
-              </template>
-            </v-data-table>
+                  <template #top>
+                    <v-row class="search-row">
+                      <v-col cols="2">
+                        <v-autocomplete
+                            v-model="data.table.searchHeader"
+                            label="검색항목"
+                            variant="outlined"
+                            hide-details
+                            :items="data.table.headers"
+                            item-title="title"
+                            item-value="key"
+                        >
+                        </v-autocomplete>
+                      </v-col>
+                      <v-col cols="9">
+                        <v-text-field
+                            v-model="data.table.searchWord"
+                            label="검색어"
+                            variant="outlined"
+                            hide-details
+                            single-line
+                        >
+                        </v-text-field>
+                      </v-col>
+                      <v-col cols="1">
+                        <v-btn prepend-icon="mdi-magnify">조회</v-btn>
+                      </v-col>
+                    </v-row>
+                  </template>
+
+                  <template v-slot:item="{ item }">
+                    <tr
+                        @click="func.onClickRow(item)"
+                        :style="{ cursor: 'pointer' }"
+                    >
+                      <td v-for="header in data.table.headers" style="text-align: center">
+                        <template v-if="header.key === 'hashtag'">
+                          <v-chip prepend-icon="mdi-pound"> {{ item[header.key] }} </v-chip>
+                        </template>
+                        <template v-else>
+                          {{ header.key ? item[header.key] : "" }}
+                        </template>
+                      </td>
+                    </tr>
+                  </template>
+                </v-data-table>
+              </v-col>
+            </v-row>
+
+            <v-row style="flex-grow: 0">
+              <v-spacer></v-spacer>
+              <v-col cols="2" class="g-right-side-btn">
+                <v-btn prepend-icon="mdi-file-document-plus-outline" @click="func.onClickBoardWrite">글쓰기</v-btn>
+              </v-col>
+            </v-row>
           </v-card>
         </v-col>
       </v-row>

@@ -24,6 +24,11 @@ export const router = createRouter({
                             component: () => import("../views/BoardList.vue")
                         },
                         {
+                            path: "boardwrite",
+                            name: "boardwrite",
+                            component: () => import("../views/BoardWrite.vue")
+                        },
+                        {
                             path: "boarddetail/:title",
                             name: "boarddetail",
                             component: () => import("../views/BoardDetail.vue")
