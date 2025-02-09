@@ -1,6 +1,6 @@
-/**::-webkit-scrollbar {*/
-/*  display: none; !* Chrome, Safari *!*/
-/*}*/
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 
 /* common */
 body {
@@ -71,10 +71,6 @@ body {
 
 .v-data-table {
   align-self: stretch;
-}
-.v-data-table__tr:hover {
-  cursor: pointer;
-  background-color: #fafcff;
 }
 .v-data-table > .search-row {
   flex: 0 0 auto !important;

@@ -16,7 +16,19 @@ export const router = createRouter({
                 {
                     path: "/home",
                     name: "home",
-                    component: () => import("../views/Home.vue")
+                    component: () => import("../views/Home.vue"),
+                    children: [
+                        {
+                            path: "boardlist",
+                            name: "boardlist",
+                            component: () => import("../views/BoardList.vue")
+                        },
+                        {
+                            path: "boarddetail/:title",
+                            name: "boarddetail",
+                            component: () => import("../views/BoardDetail.vue")
+                        },
+                    ]
                 },
                 {
                     path: "/hashtag",
